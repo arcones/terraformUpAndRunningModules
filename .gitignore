@@ -1,0 +1,7 @@
+credentials.csv
+.terraform
+*.tfstate
+*.tfstate.backup
+*.sublime*
+.idea
+.terraform.tfstate.lock.info

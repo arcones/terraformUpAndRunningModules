@@ -1,4 +1,4 @@
-# Terraform Up & Running - Modules repo
+# Terraform Up & Running - Modules.
 
 This project contains the exercises proposed in Terraform Up & Running book (O'Reilly - Brikman).
 
