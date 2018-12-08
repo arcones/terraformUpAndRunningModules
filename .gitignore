@@ -5,3 +5,5 @@ credentials.csv
 *.sublime*
 .idea
 .terraform.tfstate.lock.info
+.terraform/
+*iml
