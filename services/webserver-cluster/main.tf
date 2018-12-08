@@ -11,7 +11,6 @@ module "cluster" {
   max_size                 = "${var.max_size}"
   elb_id                   = "${module.elb.id}"
   availability_zones_names = "${data.aws_availability_zones.all.names}"
-  enable_autoscaling       = "${var.enable_autoscaling}"
 }
 
 module "elb" {
@@ -19,4 +18,17 @@ module "elb" {
   cluster_name             = "${var.cluster_name}"
   server_port              = "${var.server_port}"
   availability_zones_names = "${data.aws_availability_zones.all.names}"
+}
+
+module "scaling" {
+  source             = "scaling"
+  enable_autoscaling = "${var.enable_autoscaling}"
+  auto_scaling_group_name = "${module.cluster.auto_scaling_group_name}"
+}
+
+module "metrics" {
+  source                  = "metrics"
+  cluster_name            = "${var.cluster_name}"
+  auto_scaling_group_name = "${module.cluster.auto_scaling_group_name}"
+  instance_type           = "${var.instance_type}"
 }

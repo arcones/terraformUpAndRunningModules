@@ -19,3 +19,8 @@ terraform plan
 ```hcl-terraform
 terraform apply
 ``` 
+
+## TODOs
+
+- It seems like the cluster returns the same website whether in prod or in stage. The data should be different in each environment, so investigate and fix it.
+- Nuke everything with aws-nuke
