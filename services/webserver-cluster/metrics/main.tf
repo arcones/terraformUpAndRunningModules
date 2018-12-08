@@ -30,7 +30,7 @@ resource "aws_iam_policy" "cloudwatch_read_only" {
 }
 
 resource "aws_iam_user_policy_attachment" "cloudwatch_read_only_alicia" {
-  count      = "${1 - var.alicia_cloudwatch_full_access}"
+  count = "${1 - var.alicia_cloudwatch_full_access}"
 
   user       = "${var.user_names[0]}"
   policy_arn = "${aws_iam_policy.cloudwatch_read_only.arn}"
@@ -50,8 +50,8 @@ resource "aws_iam_policy" "cloudwatch_full_access" {
 }
 
 resource "aws_iam_user_policy_attachment" "cloudwatch_full_access_alicia" {
-  count      = "${var.alicia_cloudwatch_full_access}"
+  count = "${var.alicia_cloudwatch_full_access}"
 
   user       = "${var.user_names[0]}"
-  policy_arn = "${aws_iam_policy.cloudwatch_read_only.arn}"
+  policy_arn = "${aws_iam_policy.cloudwatch_full_access.arn}"
 }

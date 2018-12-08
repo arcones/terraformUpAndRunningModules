@@ -11,6 +11,7 @@ module "cluster" {
   max_size                 = "${var.max_size}"
   elb_id                   = "${module.elb.id}"
   availability_zones_names = "${data.aws_availability_zones.all.names}"
+  enable_new_user_data     = "${var.enable_new_user_data}"
 }
 
 module "elb" {

@@ -30,6 +30,6 @@ variable "max_size" {
 variable "user_names" {
   type = "list"
 }
-
+variable "enable_new_user_data" {}
 variable "enable_autoscaling" {}
 variable "alicia_cloudwatch_full_access" {}
