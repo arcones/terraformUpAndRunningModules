@@ -1,5 +1,5 @@
 #!/bin/bash
 
-echo "Hello world, v2" > index.html
+echo "${server_text}" > index.html
 
 nohup busybox httpd -f -p "${server_port}" &

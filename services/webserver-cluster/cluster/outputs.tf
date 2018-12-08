@@ -5,3 +5,7 @@ output "auto_scaling_group_name" {
 output "security_group_id" {
   value = "${aws_security_group.security_group_ec2.id}"
 }
+
+output "script_used" {
+  value = "${aws_launch_configuration.ubuntu.user_data}"
+}

@@ -13,3 +13,7 @@ output "elb_security_group_id" {
 output "ec2_security_group_id" {
   value = "${module.cluster.security_group_id}"
 }
+
+output "script_used" {
+  value = "${module.cluster.script_used}"
+}
