@@ -6,4 +6,4 @@ credentials.csv
 .idea
 .terraform.tfstate.lock.info
 .terraform/
-*iml
+*.iml
