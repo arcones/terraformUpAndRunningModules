@@ -16,7 +16,7 @@ data "template_file" "user_data" {
     server_port = "${var.server_port}"
     db_address  = "${data.terraform_remote_state.db.address}"
     db_port     = "${data.terraform_remote_state.db.port}"
-    server_text = "Hello from old user data"
+    server_text = "Hello from OLD user data"
   }
 }
 
@@ -28,7 +28,7 @@ data "template_file" "user_data_new" {
     server_port = "${var.server_port}"
     db_address  = "${data.terraform_remote_state.db.address}"
     db_port     = "${data.terraform_remote_state.db.port}"
-    server_text = "Hello from new user data"
+    server_text = "Hello from NEW user data"
   }
 }
 
