@@ -27,4 +27,9 @@ variable "max_size" {
   description = "The maximum number of EC2 instances in the auto scaling group"
 }
 
+variable "user_names" {
+  type = "list"
+}
+
 variable "enable_autoscaling" {}
+variable "alicia_cloudwatch_full_access" {}

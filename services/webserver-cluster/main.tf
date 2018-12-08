@@ -27,8 +27,10 @@ module "scaling" {
 }
 
 module "metrics" {
-  source                  = "metrics"
-  cluster_name            = "${var.cluster_name}"
-  auto_scaling_group_name = "${module.cluster.auto_scaling_group_name}"
-  instance_type           = "${var.instance_type}"
+  source                        = "metrics"
+  cluster_name                  = "${var.cluster_name}"
+  auto_scaling_group_name       = "${module.cluster.auto_scaling_group_name}"
+  instance_type                 = "${var.instance_type}"
+  alicia_cloudwatch_full_access = "${var.alicia_cloudwatch_full_access}"
+  user_names                    = "${var.user_names}"
 }
