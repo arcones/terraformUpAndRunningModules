@@ -17,6 +17,7 @@ resource "aws_elb" "load_balancer" {
     interval            = 30
     target              = "HTTP:${var.server_port}/"
   }
+
   lifecycle {
     create_before_destroy = true
   }
@@ -25,6 +26,7 @@ resource "aws_elb" "load_balancer" {
 resource "aws_security_group" "elb_security_group" {
   name        = "${var.cluster_name}"
   description = "Security group from the AWS ELB"
+
   lifecycle {
     create_before_destroy = true
   }
