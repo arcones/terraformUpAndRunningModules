@@ -21,8 +21,8 @@ module "elb" {
 }
 
 module "scaling" {
-  source             = "scaling"
-  enable_autoscaling = "${var.enable_autoscaling}"
+  source                  = "scaling"
+  enable_autoscaling      = "${var.enable_autoscaling}"
   auto_scaling_group_name = "${module.cluster.auto_scaling_group_name}"
 }
 
