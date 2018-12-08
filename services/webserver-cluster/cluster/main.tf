@@ -45,6 +45,7 @@ resource "aws_launch_configuration" "ubuntu" {
 }
 
 resource "aws_autoscaling_group" "scaling_group" {
+  name = "${var.cluster_name}-${aws_launch_configuration.ubuntu.name}"
   launch_configuration = "${aws_launch_configuration.ubuntu.id}"
   availability_zones   = ["${var.availability_zones_names}"]
 
@@ -53,6 +54,7 @@ resource "aws_autoscaling_group" "scaling_group" {
 
   min_size = "${var.min_size}"
   max_size = "${var.max_size}"
+  min_elb_capacity = "${var.min_size}"
 
   tags = {
     key                 = "Name"
@@ -61,6 +63,9 @@ resource "aws_autoscaling_group" "scaling_group" {
   }
 
   wait_for_capacity_timeout = "5m"
+  lifecycle {
+    create_before_destroy = true
+  }
 }
 
 resource "aws_security_group" "security_group_ec2" {
