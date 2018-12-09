@@ -33,7 +33,7 @@ data "template_file" "user_data_new" {
 }
 
 resource "aws_launch_configuration" "ubuntu" {
-  image_id        = "${var.ami}"
+  image_id        = "${data.aws_ami.ubuntu.id}"
   instance_type   = "${var.instance_type}"
   security_groups = ["${aws_security_group.security_group_ec2.id}"]
 
