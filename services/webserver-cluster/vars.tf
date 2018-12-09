@@ -34,3 +34,4 @@ variable "user_names" {
 variable "enable_new_user_data" {}
 variable "enable_autoscaling" {}
 variable "alicia_cloudwatch_full_access" {}
+variable "open_testing_port" {}

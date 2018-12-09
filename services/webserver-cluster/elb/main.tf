@@ -51,3 +51,14 @@ resource "aws_security_group_rule" "allow_http_inbound_elb" {
   protocol    = "tcp"
   cidr_blocks = ["0.0.0.0/0"]
 }
+
+resource "aws_security_group_rule" "allow_testing_inbound_elb" {
+  count             = "${var.open_testing_port}"
+  type              = "ingress"
+  security_group_id = "${aws_security_group.elb_security_group.id}"
+
+  from_port   = 12345
+  to_port     = 12345
+  protocol    = "tcp"
+  cidr_blocks = ["0.0.0.0/0"]
+}

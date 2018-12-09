@@ -19,6 +19,7 @@ module "elb" {
   cluster_name             = "${var.cluster_name}"
   server_port              = "${var.server_port}"
   availability_zones_names = "${data.aws_availability_zones.all.names}"
+  open_testing_port        = "${var.open_testing_port}"
 }
 
 module "scaling" {
