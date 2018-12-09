@@ -1,6 +1,6 @@
 # Terraform Up & Running - Modules.
 
-This project contains the exercises proposed in [Terraform Up & Running book (O'Reilly - Brikman)](https://www.terraformupandrunning.com/) 
+This project contains the exercises proposed in [Terraform Up & Running book](https://www.terraformupandrunning.com/) 
 
 ## Purpose
 
